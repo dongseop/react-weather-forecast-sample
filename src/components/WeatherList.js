@@ -7,13 +7,13 @@ import WeatherItem from './WeatherItem';
 export default function WeatherList() {
   const cities = useSelector(state => state.cities)
   return (
-    <Table bordered hover variant="dark">
+    <Table bordered hover>
       <thead>
         <tr>
+          <th></th>
           <th>City</th>
-          <th>Temperature</th>
-          <th>Pressure</th>
-          <th>Humidity</th>
+          <th>온도</th>
+          <th></th>
         </tr>
       </thead>
       <tbody>

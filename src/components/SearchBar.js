@@ -5,8 +5,12 @@ import Button from 'react-bootstrap/Button';
 import { useDispatch, useSelector } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSpinner } from '@fortawesome/free-solid-svg-icons'
-
+import styled from 'styled-components';
 import { addCity } from '../actions/index';
+
+const StyledFormControl = styled(FormControl)`
+  min-width: 90%;
+`;
 
 export default function SearchBar() {
   const [name, setName] = useState("");
@@ -15,7 +19,8 @@ export default function SearchBar() {
 
   return (
     <Form inline className="mt-3 mb-3">
-      <FormControl type="text" placeholder="Search" className="mr-sm-2" 
+      <StyledFormControl type="text" placeholder="Search" 
+        className="mr-sm-2" 
         value={name}
         onChange={(event) => {
           setName(event.target.value);
