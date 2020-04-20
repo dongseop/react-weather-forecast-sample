@@ -12,12 +12,12 @@ export default function WeatherList() {
         <tr>
           <th>City</th>
           <th>Temperature</th>
-          <th>Humidity</th>
           <th>Pressure</th>
+          <th>Humidity</th>
         </tr>
       </thead>
       <tbody>
-        { cities.map(item => (<WeatherItem data={item}/>))}
+        { cities.map(item => (<WeatherItem key={item.city.id} data={item}/>))}
       </tbody>
     </Table>
   );

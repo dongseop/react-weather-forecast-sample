@@ -1,31 +1,27 @@
 import produce from 'immer';
 
 const initialState = {
-  cities: [
-    {
-      id: 1, city: 'Seoul',
-      temp: 10.24,
-      pressure: 1012,
-      humidity: 73,
-    },
-    {
-      id: 2, city: 'Tokyo',
-      temp: 10.24,
-      pressure: 1012,
-      humidity: 73,
-    },
-    {
-      id: 3, city: 'N.Y.',
-      temp: 10.24,
-      pressure: 1012,
-      humidity: 73,
-    }
-  ]
+  cities: [],
+  error: null,
+  loading: false,
 };
 const reducer = produce((state, action) => {
+  console.log(action);
   switch(action.type) {
     case 'ADD_CITY':
       state.cities.push(action.payload);
+      break;
+    case 'ERROR':
+      state.error = action.payload;
+      break;
+    case 'CLEAR_ERRORS':
+      state.error = null;
+      break;
+    case 'START_LOADING':
+      state.loading = true;
+      break;
+    case 'END_LOADING':
+      state.loading = false;
       break;
     default: 
       break;
